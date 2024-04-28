@@ -31,7 +31,7 @@ const Login =async(req,res)=>{
 
 const Signup = async(req,res)=>{
     try{
-        const {username,email,password,role} = req.body;
+        const {username,email,password,role,phone} = req.body;
         if(!username||!email||!password){
             return res.status(400).json({error:true,message:'enter all the details'});
         }
@@ -45,7 +45,8 @@ const Signup = async(req,res)=>{
                 username:username,
                 email:email,
                 password:hashpassword,
-                role:role
+                role:role,
+                userPhone:phone
             })
             return res.status(200).json({error:false,message:'User created successfully'})
         }catch(err){
