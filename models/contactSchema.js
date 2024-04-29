@@ -17,14 +17,6 @@ const contactSchema = new mongoose.Schema(
             type:String,
             required:true
         },
-        topic:{
-            type:String,
-            required:true
-        },
-        priority:{
-            type:Number,
-            required:true
-        },
         agentName:{
             type:String,
             required:true
