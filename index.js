@@ -37,6 +37,22 @@ app.get('/getContact',async (req,res)=>{
     }
 })
 
+app.post('/store',async (req,res)=>{
+    try{
+        await contactModel.create({
+            "contactName":req.body.name,
+            "contactMail":req.body.email,
+            "contactPhone":req.body.number,
+            "agentName":req.body.agent
+        })
+        res.status(200).json({
+            "status":"Success fully added to database"
+        })
+    }catch(error){
+        res.status(401).json({'status':'error','error':error})
+    }
+})
+
 app.listen(8000, () => {
     console.log('Server is running on port 8000')
 })
