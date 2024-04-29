@@ -43,7 +43,8 @@ app.post('/store',async (req,res)=>{
             "contactName":req.body.name,
             "contactMail":req.body.email,
             "contactPhone":req.body.number,
-            "agentName":req.body.agent
+            "agentName":req.body.agent,
+            "status":"pending"
         })
         res.status(200).json({
             "status":"Success fully added to database"
