@@ -18,7 +18,7 @@ const Login =async(req,res)=>{
         if(!checkPassword){
             return res.status(400).json({error:true,message:'Invalid password'})
         }
-        const token = generateToken(user._id,user.username,user.role,user.contactno)
+        const token = generateToken(user.email,user._id,user.username,user.role,user.contactno)
         if(token==""){
             return res.status(400).json({error:true,message:'Token generation failed'})
         }
