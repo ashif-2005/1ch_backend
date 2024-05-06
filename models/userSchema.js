@@ -14,7 +14,7 @@ const userSchema =new mongoose.Schema(
         unique:true
        },
 
-       userPhone:{
+       contactno:{
         type:String,
         require:true
        },
