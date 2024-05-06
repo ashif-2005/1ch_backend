@@ -3,10 +3,10 @@ const dotenv = require('dotenv')
 dotenv.config('./env')
 const secret = process.env.SECRET;
 
-const generateToken = (email,role)=>{
+const generateToken = (id,name,role,phone)=>{
     try{
         const token = jwt.sign(
-            {email,role},
+            {id,name,role,phone},
              secret,
             {expiresIn:'7d'}
         )
