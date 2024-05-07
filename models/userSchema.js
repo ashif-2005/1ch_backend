@@ -35,8 +35,9 @@ const userSchema =new mongoose.Schema(
        },
 
        isBan:{
-        type:Boolean,
-        default:false
+        type:String,
+        enum: ['Active','InActive'], 
+        default:'Active'
        }
     },
     {
