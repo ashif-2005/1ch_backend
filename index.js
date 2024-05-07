@@ -65,6 +65,17 @@ app.post('/update', async (req, res) => {
     }
 });
 
+app.post('/state', async (req, res) => {
+    try {
+        const id = req.body.id;
+        const update = req.body.val;
+        const result = await userModel.updateOne({ _id: id }, { $set: {isBan:update} });
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 app.listen(8000, () => {
     console.log('Server is running on port 8000')
 })
